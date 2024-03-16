@@ -13,7 +13,6 @@ class scren extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
             Container(
               height: tinggi * 0.5,
               width: lebar * 0.9,

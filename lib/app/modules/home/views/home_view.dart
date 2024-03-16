@@ -2,10 +2,10 @@
 
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:get/get.dart';
-
+import 'package:lottie/lottie.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:test/app/routes/app_pages.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -50,7 +50,6 @@ class HomeView extends GetView<HomeController> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  
                   SizedBox(height: 20),
                   Center(
                     child: Obx(
@@ -89,7 +88,6 @@ class HomeView extends GetView<HomeController> {
             Obx(
               () => controller.image != null
                   ? Column(
-                    
                       children: [
                         ElevatedButton(
                           style: ButtonStyle(
@@ -129,8 +127,6 @@ class HomeView extends GetView<HomeController> {
                                                 ? Colors.red
                                                 : Colors.green),
                                       ),
-               
-               
                                       SizedBox(
                                         height: 20,
                                       ),
@@ -144,11 +140,44 @@ class HomeView extends GetView<HomeController> {
                                             ? Colors.red
                                             : Colors.green,
                                       ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          ElevatedButton(
+                                              style: ButtonStyle(
+                                                  backgroundColor:
+                                                      MaterialStatePropertyAll(
+                                                          Colors.red)),
+                                              onPressed: () {
+                                                Get.back();
+                                              },
+                                              child: Text(
+                                                "kembali",
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              )),
+                                          ElevatedButton(
+                                              style: ButtonStyle(
+                                                  backgroundColor:
+                                                      MaterialStatePropertyAll(
+                                                          Colors.green)),
+                                              onPressed: () {
+                                                Get.toNamed(Routes.HASIL);
+                                              },
+                                              child: Flexible(
+                                                  child: Text(
+                                                "Info lebih lanjut",
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              ))),
+                                        ],
+                                      )
                                     ],
                                   ),
                                 ),
-                                btnCancelOnPress: () {},
-                                btnOkOnPress: () {},
+                                // btnCancelOnPress: () {},
+                                // btnOkOnPress: () {},
                               )..show();
                             }
                           },
@@ -215,7 +244,6 @@ class HomeView extends GetView<HomeController> {
                       ],
                     ),
             ),
-        
           ],
         ),
       ),
