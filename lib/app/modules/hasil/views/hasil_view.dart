@@ -17,7 +17,7 @@ class HasilView extends GetView<HasilController> {
         child: ListView(
           children: [
             Text(
-              '     Glioma, Meningioma, Pituitary, dan Non-Tumor adalah beberapa jenis tumor yang dapat terjadi di dalam otak dan sistem saraf pusat. Berikut penjelasan singkat tentang masing-masing:',
+              'Glioma, Meningioma, Pituitary, dan Non-Tumor adalah beberapa jenis tumor yang dapat terjadi di dalam otak dan sistem saraf pusat. Berikut penjelasan singkat tentang masing-masing:',
               textAlign: TextAlign.justify,
               // style: TextStyle(fontSize: 15),
             ),
@@ -26,7 +26,7 @@ class HasilView extends GetView<HasilController> {
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
             Text(
-              "Meningioma adalah jenis tumor yang berasal dari selaput yang melapisi otak dan sumsum tulang belakang, yang disebut meningi.\n Glioma adalah tumor ganas yang bisa berkembang di berbagai bagian otak, termasuk otak besar, batang otak, dan sumsum tulang belakang.\nJenis-jenis glioma meliputi glioblastoma multiforme (GBM), astrocytoma, oligodendroglioma, dan ependymoma.",
+              "Glioma adalah tumor ganas yang bisa berkembang di berbagai bagian otak, termasuk otak besar, batang otak, dan sumsum tulang belakang.\nGlioma dapat menjadi tumor ganas, yang berarti mereka dapat tumbuh secara invasif ke dalam jaringan sekitarnya dan menyebar ke bagian lain dari otak atau sumsum tulang belakang. Glioblastoma multiforme (GBM) adalah jenis glioma yang paling ganas dan biasanya memiliki prognosis yang buruk.\nJenis-jenis glioma meliputi glioblastoma multiforme (GBM), astrocytoma, oligodendroglioma, dan ependymoma.",
               textAlign: TextAlign.justify,
             ),
             Text(

@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously, deprecated_member_use, avoid_single_cascade_in_expression_statements
-
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -38,15 +36,10 @@ class HomeView extends GetView<HomeController> {
           centerTitle: true,
           elevation: 0,
         ),
-        // backgroundColor: Colors.grey,
         body: ListView(
           children: [
             Container(
-              // height: tinggi * 0.6,
-              // width: lebar * 0.5,
-              // color: Colors.amber,
               padding: EdgeInsets.all(20),
-              // width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -101,13 +94,15 @@ class HomeView extends GetView<HomeController> {
                               side: MaterialStatePropertyAll(BorderSide(
                                   width: 3, color: Color(0xff00ffff)))),
                           onPressed: () async {
+                            //pengunaan fungsion klasifikasi
                             await controller.classifyImage();
                             if (controller.output != null &&
                                 controller.output!.isNotEmpty) {
+                              //hasil klasifikasi
                               double confidence =
                                   controller.output![0]["confidence"] ?? 0.0;
                               String label = controller.output![0]["label"];
-
+                              // dialog hasil
                               AwesomeDialog(
                                 context: context,
                                 dialogType: label != "Notumor"
@@ -140,44 +135,17 @@ class HomeView extends GetView<HomeController> {
                                             ? Colors.red
                                             : Colors.green,
                                       ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          ElevatedButton(
-                                              style: ButtonStyle(
-                                                  backgroundColor:
-                                                      MaterialStatePropertyAll(
-                                                          Colors.red)),
-                                              onPressed: () {
-                                                Get.back();
-                                              },
-                                              child: Text(
-                                                "kembali",
-                                                style: TextStyle(
-                                                    color: Colors.white),
-                                              )),
-                                          ElevatedButton(
-                                              style: ButtonStyle(
-                                                  backgroundColor:
-                                                      MaterialStatePropertyAll(
-                                                          Colors.green)),
-                                              onPressed: () {
-                                                Get.toNamed(Routes.HASIL);
-                                              },
-                                              child: Flexible(
-                                                  child: Text(
-                                                "Info lebih lanjut",
-                                                style: TextStyle(
-                                                    color: Colors.white),
-                                              ))),
-                                        ],
-                                      )
                                     ],
                                   ),
                                 ),
-                                // btnCancelOnPress: () {},
-                                // btnOkOnPress: () {},
+                                //tobol cencel
+                                btnCancelOnPress: () {
+                                  Get.back();
+                                },
+                                //tobol oke pindah page ke informasi
+                                btnOkOnPress: () {
+                                  Get.toNamed(Routes.HASIL);
+                                },
                               )..show();
                             }
                           },
